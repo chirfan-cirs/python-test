@@ -1,4 +1,4 @@
-def say_hello(name):
-    print(f"Hallo {name}")
+nama = "Xaxaxa"
+umur = 12
 
-say_hello("Cirs")
+print(nama, umur)
