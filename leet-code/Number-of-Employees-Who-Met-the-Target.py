@@ -7,8 +7,9 @@ class Solution(object):
                 n += 1
 
         return n
-        """
-        :type hours: List[int]
-        :type target: int
-        :rtype: int
-        """
+
+"""
+:type hours: List[int]
+:type target: int
+:rtype: int
+"""
