@@ -6,6 +6,7 @@ class Solution(object):
             ans[i] = nums[nums[i]]
         return ans
 
+
 """
 :type nums: List[int]
 :rtype: List[int]
