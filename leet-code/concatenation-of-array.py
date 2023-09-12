@@ -3,7 +3,6 @@ class Solution(object):
         ans = nums*2
         return ans
 
-
 """
 :type nums: List[int]
 :rtype: List[int]
