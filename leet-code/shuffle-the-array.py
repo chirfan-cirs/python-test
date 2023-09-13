@@ -6,6 +6,7 @@ class Solution(object):
             ans.append(nums[i + n])
         return ans
 
+
 """
 :type nums: List[int]
 :type n: int
