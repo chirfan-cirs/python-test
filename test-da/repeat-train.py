@@ -1,18 +1,17 @@
-list = ["Xaxa", "asdf", "wfea"]
-new_list = list[:]
-del list[:]
+print("\nGanjil")
+list = [1,2,3,4,5]
+print(list[0::2])
 
-print("\nDelete list")
-for i in list:
+print("\nGenap")
+list = [1,2,3,4,5]
+print(list[1::2])
+
+print("\nInput Ganjil")
+inp = int(input("Masukan Nomor : "))
+for i in range(1, inp, 2):
     print(i)
 
-print("\nNew List")
-for j in new_list:
-    print(j)
-
-print("\nList")
-for i in list:
+print("\nInput Genap")
+inp = int(input("Masukan Nomor : "))
+for i in range(0, inp, 2):
     print(i)
-
-list = ["Xaxa", "asdf", "wfea"]
-print(list[:])

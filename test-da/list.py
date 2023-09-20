@@ -43,3 +43,13 @@ print(list[0::2])
 print("\nList compre : Direct Genap")
 list = ["1 Sleep", "2 Eat", "3 Playing", "4 Bath"]
 print(list[1::2])
+
+print("\nInput Ganjil using compre")
+inp = int(input("Masukan Nomor : "))
+for i in range(1, inp, 2):
+    print(i)
+
+print("\nInput Genap using compre")
+inp = int(input("Masukan Nomor : "))
+for i in range(0, inp, 2):
+    print(i)
