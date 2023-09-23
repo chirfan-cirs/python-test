@@ -6,11 +6,12 @@ users = {
     },
     "user2": {
         "id": 2,
-        "name": "asdf",
-        "email": "asdf@gmail.com"
+        "name": "asdfg",
+        "email": "asdfg@gmail.com"
     }
 }
 
+print("\nDict")
 print(users)
 print(users["user1"])
 print(users["user2"])
