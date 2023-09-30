@@ -1,4 +1,6 @@
-nama = "Xaxaxa"
-umur = 12
+import data
 
-print(nama, umur)
+if __name__ == '__main__':
+    print("Main Application")
+    result = data.extract_data()
+    data.view_data(result)
