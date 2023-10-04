@@ -47,8 +47,14 @@ def extract_data():
 def view_data(result):
     # print(result)
     print("THE MOST READ NEWS FROM Kompas.com")
-    print(f"Most Read News Number 1 : {result['one']}")
-    print(f"Most Read News Number 2 : {result['two']}")
-    print(f"Most Read News Number 3 : {result['three']}")
-    print(f"Most Read News Number 4 : {result['four']}")
-    print(f"Most Read News Number 5 : {result['five']}")
+
+    i = range(1, 6)
+    res = result['one'], result['two'], result['three'], result['four'], result['five']
+    for x, y in zip(i, res):
+        print(f"Most Read News Number {x} : {y}")
+
+    # print(f"Most Read News Number 1 : {result['one']}")
+    # print(f"Most Read News Number 2 : {result['two']}")
+    # print(f"Most Read News Number 3 : {result['three']}")
+    # print(f"Most Read News Number 4 : {result['four']}")
+    # print(f"Most Read News Number 5 : {result['five']}")
