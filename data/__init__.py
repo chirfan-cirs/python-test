@@ -48,6 +48,7 @@ def view_data(result):
     # print(result)
     print("THE MOST READ NEWS FROM Kompas.com")
 
+
     i = range(1, 6)
     res = result['one'], result['two'], result['three'], result['four'], result['five']
     for x, y in zip(i, res):
