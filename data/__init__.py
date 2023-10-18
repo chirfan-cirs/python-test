@@ -1,3 +1,4 @@
+import csv
 import requests
 from bs4 import BeautifulSoup
 
@@ -12,6 +13,7 @@ def extract_data():
         src = BeautifulSoup(link.text, 'html.parser')
         result = src.find('div', {'class': 'most__wrap clearfix'})
         result = result.findChildren('h4')
+        data = []
 
         i = 1
         media1 = None
@@ -34,16 +36,26 @@ def extract_data():
             i = i + 1
 
         data = dict()
-        data['media1'] = media1
-        data['media2'] = media2
-        data['media3'] = media3
-        data['media4'] = media4
-        data['media5'] = media5
+        data['No 1'] = media1
+        data['No 2'] = media2
+        data['No 3'] = media3
+        data['No 4'] = media4
+        data['No 5'] = media5
         return data
+
+def save_csv(data):
+    filename = 'kompas-scrap.csv'
+    with open(filename, 'wt+', newline='') as f:
+        w = csv.DictWriter(f, ['news number', 'news'])
+        w.writeheader()
+
+        for key, value in data.items():
+            w.writerow({'news number': key, 'news': value})
+
 
 def view_data(result):
     print("Data Scraping Kompas.com")
-    dat = result['media1'], result['media2'], result['media3'], result['media4'], result['media5']
+    dat = result['No 1'], result['No 2'], result['No 3'], result['No 4'], result['No 5']
     index = range(1, 6)
     for x, y in zip(index, dat):
         print(f"Data berita Populer No {x}. {y}")
