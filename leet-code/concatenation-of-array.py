@@ -1,9 +1,7 @@
 class Solution(object):
     def getConcatenation(self, nums):
-        ans = nums*2
+        ans = 2 * nums
         return ans
-
-
 """
 :type nums: List[int]
 :rtype: List[int]
