@@ -1,16 +1,8 @@
+x = 0
+num = 5
 
-
-datas = {
-    "name" : "asdasd",
-    "age" : 14,
-}, {
-    "name" : "xaxaxa",
-    "age" : 72,
-}, {
-    "name" : "grwegf",
-    "age" : 42,
-}
-
-print(datas)
-for data in datas:
-    print(data)
+for i in range(num):
+    for j in range(i+1):
+        x = i + 1
+        print("* ",end="")
+    print("\n")
