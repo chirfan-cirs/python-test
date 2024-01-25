@@ -22,9 +22,9 @@ def compareTriplets(a, b):
     b_point = 0
     for i in range(3):
         if a[i] > b[i]:
-            a_point += 1
+            a_point +=1
         elif a[i] < b[i]:
-            b_point += 1
+            b_point +=1
 
     return [a_point, b_point]
 
