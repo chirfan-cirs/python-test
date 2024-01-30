@@ -64,69 +64,43 @@ def view_data(result):
 
 
 
-
-
-
-
-
+#
 # import requests
 # from bs4 import BeautifulSoup
+# import csv
 #
+# # Send a GET request to the target website
+# url = "https://www.goodreads.com/list/show/18816.Books_You_Must_Read_"
+# response = requests.get(url)
 #
-# def extract_data():
-#     try:
-#         link = requests.get('https://www.kompas.com/')
-#         print(link.status_code)
-#     except Exception:
-#         return None
+# if response.status_code == 200:
+#     # Parse the HTML content of the page
+#     soup = BeautifulSoup(response.content, "html.parser")
 #
-#     if link.status_code == 200:
-#         src = BeautifulSoup(link.text, 'html.parser')
-#         result = src.find('div', {'class': 'most__wrap clearfix'})
-#         result = result.findChildren('h4')
+#     # Find all book names and author names using CSS selectors
+#     book_selector = "a.bookTitle span"
+#     auth_selector = "span[itemprop='author']"
 #
-#         i = 1
-#         most_title1 = None
-#         most_title2 = None
-#         most_title3 = None
-#         most_title4 = None
-#         most_title5 = None
+#     book_data = []
 #
-#         for res in result:
-#             # print(i, res)
-#             if i == 1:
-#                 most_title1 = res.text
-#             elif i == 2:
-#                 most_title2 = res.text
-#             elif i == 3:
-#                 most_title3 = res.text
-#             elif i == 4:
-#                 most_title4 = res.text
-#             elif i == 5:
-#                 most_title5 = res.text
-#             i = i + 1
+#     # Find all book names and author names using CSS selectors
+#     book_names = soup.select(book_selector)
+#     auth_names = soup.select(auth_selector)
 #
-#         data = dict()
-#         data['one'] = most_title1
-#         data['two'] = most_title2
-#         data['three'] = most_title3
-#         data['four'] = most_title4
-#         data['five'] = most_title5
-#         return data
+#     # Extract text from the selected elements
+#     for book_name, auth_name in zip(book_names, auth_names):
+#         book_name_text = book_name.get_text(strip=True)
+#         auth_name_text = auth_name.get_text(strip=True)
 #
+#         book_data.append([book_name_text, auth_name_text])
 #
-# def view_data(result):
-#     print(result)
-#     print("THE MOST READ NEWS FROM Kompas.com")
+#     csv_filename = "book_list.csv"
 #
-#
-#     i = range(1, 6)
-#     res = result['one'], result['two'], result['three'], result['four'], result['five']
-#     for x, y in zip(i, res):
-#         print(f"Most Read News Number {x} : {y}")
-#
-#     print(f"Most Read News Number 1 : {result['one']}")
-#     # print(f"Most Read News Number 2 : {result['two']}")
-#     # print(f"Most Read News Number 3 : {result['three']}")
-#     # print(f"Most Read News Number 4 : {result['four']}")
-#     # print(f"Most Read News Number 5 : {result['five']}")
+#     # Write the data to a CSV file
+#     with open(csv_filename, mode="w", encoding="utf-8", newline="") as file:
+#         writer = csv.writer(file)
+#         writer.writerow(["Book Name", "Author Name"])  # Write header row
+#         writer.writerows([book_data])
+#     print(f"Data has been scraped and saved to {csv_filename}")
+# else:
+#     print(f"Failed to retrieve data. Status code: {response.status_code}")
